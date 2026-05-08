@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <script async src="https://www.googletagmanager.com/gtag/js?id=[ID_GOOGLE_ADS]"></script> 
     <script> 
@@ -12,7 +12,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
-    <title>Cek Ketersediaan | 493 Scooter Rentals</title>
+    <title>Check Availability | 493 Scooter Rentals</title>
+    
+    <meta name="description" content="Check real-time scooter availability for your vacation dates in Bali. Find and book your perfect ride instantly with 493 Scooter Rentals.">
+    <meta property="og:title" content="Check Availability | 493 Scooter Rentals">
+    <meta property="og:description" content="Check real-time scooter availability for your vacation dates in Bali. Find and book your perfect ride instantly!">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1558981806-ec527fa84c39?q=80&w=1000&auto=format&fit=crop">
+    <meta property="og:url" content="https://493scooterrentals.com/cariunit.html">
+    <meta property="og:type" content="website">
+
     <link rel="icon" type="image/png" href="https://i.ibb.co.com/RT54HDDv/1000147993.png">
     
     <meta name="theme-color" content="#3E2723">
@@ -41,7 +49,24 @@
         .logo img { height: 38px; }
         .logo b { color: var(--primary-yellow); }
         
-        .lang-btn { background: #fff; color: var(--dark-brown); border: 1px solid var(--primary-yellow); padding: 6px 14px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; cursor: pointer; }
+        /* UPDATED LANG BUTTON */
+        .lang-btn { 
+            background: var(--dark-brown); 
+            color: var(--primary-yellow); 
+            border: 2px solid var(--primary-yellow); 
+            padding: 6px 14px; 
+            border-radius: 20px; 
+            font-size: 0.75rem; 
+            font-weight: 800; 
+            cursor: pointer; 
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        .lang-btn:hover {
+            background: var(--primary-yellow);
+            color: var(--dark-brown);
+            border-color: var(--dark-brown);
+        }
 
         /* HERO HEADER */
         .hero { 
@@ -90,14 +115,14 @@
         .nav-item.active i { color: var(--primary-yellow); }
     </style>
 </head>
-<body class="lang-id">
+<body class="lang-en">
 
 <nav>
     <a href="index.html" class="logo">
         <img src="https://i.ibb.co.com/RT54HDDv/1000147993.png" alt="Logo">
         <span>Scooter <b>Rentals</b></span>
     </a>
-    <button class="lang-btn" onclick="toggleLang()">ID | EN</button>
+    <button class="lang-btn" onclick="toggleLang()">EN | ID</button>
 </nav>
 
 <div class="hero">
@@ -114,7 +139,7 @@
         <div class="row g-3">
             <div class="col-md-5">
                 <label class="form-label id">Tanggal Sewa</label>
-                <label class="form-label en">Pick-up Date</label>
+                <label class="form-label en">Start Rent</label>
                 <input type="date" id="start" class="form-control form-control-lg">
             </div>
             <div class="col-md-5">
@@ -149,14 +174,16 @@
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content border-0 shadow-lg" style="border-radius: 25px;">
       <div class="modal-header modal-header-custom p-4">
-        <h5 class="modal-title fw-bold"><i class="fas fa-motorcycle me-2"></i> Konfirmasi Booking</h5>
+        <h5 class="modal-title fw-bold"><i class="fas fa-motorcycle me-2"></i> <span class="id">Konfirmasi Booking</span><span class="en">Booking Confirmation</span></h5>
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body p-4" id="modalBody"></div>
       <div class="modal-footer border-0 p-4 pt-0">
-        <button type="button" class="btn btn-light rounded-pill fw-bold" data-bs-dismiss="modal">Batal</button>
+        <button type="button" class="btn btn-light rounded-pill fw-bold" data-bs-dismiss="modal">
+            <span class="id">Batal</span><span class="en">Cancel</span>
+        </button>
         <button type="button" id="confirmWaBtn" class="btn px-4 fw-bold rounded-pill shadow-sm" style="background: #25D366; color: white;">
-            <i class="fab fa-whatsapp me-2"></i> Kirim ke WhatsApp
+            <i class="fab fa-whatsapp me-2"></i> <span class="id">Kirim ke WhatsApp</span><span class="en">Send to WhatsApp</span>
         </button>
       </div>
     </div>
@@ -199,6 +226,13 @@
     function toggleLang() {
         document.body.classList.toggle('lang-en');
         document.body.classList.toggle('lang-id');
+        
+        const btn = document.querySelector('.lang-btn');
+        if(document.body.classList.contains('lang-en')) {
+            btn.innerHTML = "EN | ID";
+        } else {
+            btn.innerHTML = "ID | EN";
+        }
     }
 
     async function fetchData() {
@@ -266,7 +300,7 @@
         });
 
         if (totalAvailable === 0) {
-            container.innerHTML = `<div class="text-center py-5 w-100"><h3>Maaf, semua unit penuh.</h3></div>`;
+            container.innerHTML = `<div class="text-center py-5 w-100"><h3 class="id">Maaf, semua unit penuh.</h3><h3 class="en">Sorry, all units are fully booked.</h3></div>`;
             return;
         }
 
@@ -296,7 +330,11 @@
 
     async function handleFilter() {
         const start = document.getElementById('start').value, end = document.getElementById('end').value;
-        if (!start || !end) { alert("Pilih tanggal dulu ya."); return; }
+        const isEn = document.body.classList.contains('lang-en');
+        if (!start || !end) { 
+            alert(isEn ? "Please select the dates first." : "Pilih tanggal dulu ya."); 
+            return; 
+        }
         document.getElementById('placeholder').style.display = 'none';
         document.getElementById('motorContainer').innerHTML = "";
         document.getElementById('loading').style.display = 'block';
@@ -309,12 +347,19 @@
         document.getElementById('modalBody').innerHTML = `
             <div class="bg-light p-4 rounded-4">
                 <h5 class="fw-bold mb-3">${model}</h5>
-                <p class="mb-1">📅 Ambil: <b>${sDate}</b></p>
-                <p class="mb-1">🏁 Kembali: <b>${eDate}</b></p>
-                <h5 class="text-success mt-3 fw-bold">Rp ${Number(harga).toLocaleString('id-ID')} / hari</h5>
+                <p class="mb-1 id">📅 Ambil: <b>${sDate}</b></p>
+                <p class="mb-1 en">📅 Pick-up: <b>${sDate}</b></p>
+                <p class="mb-1 id">🏁 Kembali: <b>${eDate}</b></p>
+                <p class="mb-1 en">🏁 Return: <b>${eDate}</b></p>
+                <h5 class="text-success mt-3 fw-bold">Rp ${Number(harga).toLocaleString('id-ID')} <span class="id">/ hari</span><span class="en">/ day</span></h5>
             </div>`;
+        
         document.getElementById('confirmWaBtn').onclick = () => {
-            const msg = `Halo ${namaKlien}, saya ingin booking unit dari website:%0A%0A🛵 *Model:* ${model}%0A📅 *Tgl Sewa:* ${sDate} s/d ${eDate}%0A💰 *Harga:* Rp ${Number(harga).toLocaleString('id-ID')}/hari%0A%0A(Admin Ref: ${plat})`;
+            const isEn = document.body.classList.contains('lang-en');
+            const msg = isEn 
+                ? `Hello ${namaKlien}, I want to book a unit from the website:%0A%0A🛵 *Model:* ${model}%0A📅 *Dates:* ${sDate} to ${eDate}%0A💰 *Price:* Rp ${Number(harga).toLocaleString('id-ID')}/day%0A%0A(Admin Ref: ${plat})`
+                : `Halo ${namaKlien}, saya ingin booking unit dari website:%0A%0A🛵 *Model:* ${model}%0A📅 *Tgl Sewa:* ${sDate} s/d ${eDate}%0A💰 *Harga:* Rp ${Number(harga).toLocaleString('id-ID')}/hari%0A%0A(Admin Ref: ${plat})`;
+            
             window.open(`https://wa.me/${adminNumber}?text=${msg}`, '_blank');
         };
         new bootstrap.Modal(document.getElementById('bookingModal')).show();
