@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=[ID_GOOGLE_ADS]"></script> 
+    <script> 
+      window.dataLayer = window.dataLayer || []; 
+      function gtag(){dataLayer.push(arguments);} 
+      gtag('js', new Date()); 
+      gtag('config', '[ID_GOOGLE_ADS]'); 
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    <title>Katalog Armada | 493 Scooter Rentals</title>
+    <link rel="icon" type="image/png" href="https://i.ibb.co.com/RT54HDDv/1000147993.png">
+    
+    <meta name="theme-color" content="#3E2723">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-yellow: #FFD700;
+            --dark-brown: #3E2723;
+            --light-brown: #5D4037;
+            --text-dark: #2C1B18;
+            --bg-page: #fdfaf5;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Roboto, sans-serif; background-color: var(--bg-page); color: var(--text-dark); line-height: 1.6; overflow-x: hidden; -webkit-tap-highlight-color: transparent; }
+
+        /* MULTI-LANGUAGE */
+        body.lang-id .en { display: none !important; }
+        body.lang-en .id { display: none !important; }
+
+        /* NAVBAR ATAS */
+        nav { background: #fff; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; }
+        .logo { font-weight: 800; font-size: 1.1rem; color: var(--dark-brown); letter-spacing: 0.5px; display: flex; align-items: center; gap: 8px; text-decoration: none; }
+        .logo img { height: 38px; }
+        .logo b { color: var(--primary-yellow); }
+        
+        .lang-btn { background: #fff; color: var(--dark-brown); border: 1px solid var(--primary-yellow); padding: 6px 14px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; cursor: pointer; }
+
+        /* HERO MINI */
+        .hero-mini {
+            padding: 80px 0 50px; 
+            background: linear-gradient(rgba(62, 39, 35, 0.7), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1558981806-ec527fa84c39?q=80&w=1000');
+            background-size: cover; background-position: center; color: white; text-align: center; clip-path: ellipse(150% 100% at 50% 0%);
+        }
+        .hero-mini h1 { font-weight: 800; font-size: 2.2rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
+        .hero-mini p { color: var(--primary-yellow); font-weight: 500; }
+
+        /* CARDS KATALOG */
+        .card-motor { border: none; border-radius: 28px; background: #fff; transition: 0.4s; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border: 1px solid #eee; }
+        .card-motor:hover { transform: translateY(-5px); border-color: var(--primary-yellow); }
+        .img-wrapper { position: relative; height: 230px; overflow: hidden; background: #e9ecef; }
+        .img-wrapper img { width: 100%; height: 100%; object-fit: cover; }
+        .status-pill { position: absolute; top: 15px; left: 15px; padding: 6px 16px; border-radius: 50px; font-size: 0.65rem; font-weight: 800; color: #fff; text-transform: uppercase; z-index: 10; }
+        
+        .bg-available { background-color: #198754; box-shadow: 0 4px 10px rgba(25, 135, 84, 0.3); } 
+        .bg-rented { background-color: #6c757d; }
+
+        .btn-booking { background-color: var(--primary-yellow); color: var(--dark-brown); border: none; transition: 0.3s; }
+        .btn-booking:hover { background-color: var(--dark-brown); color: #fff; }
+
+        /* FOOTER */
+        footer { text-align: center; padding: 40px 20px 140px; background: var(--dark-brown); color: #ccc; font-size: 0.8rem; margin-top: 40px; }
+        footer .address { color: var(--primary-yellow); font-style: italic; font-size: 0.75rem; margin-top: 10px; }
+
+        /* NAV MOBILE BAWAH */
+        .floating-nav { 
+            position: fixed; bottom: 0; left: 0; width: 100%; 
+            background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); 
+            display: flex; justify-content: space-around; 
+            padding: 12px 5px calc(15px + env(safe-area-inset-bottom)); 
+            box-shadow: 0 -5px 25px rgba(0,0,0,0.1); z-index: 9999; 
+            border-radius: 25px 25px 0 0; 
+        }
+        .nav-item { text-align: center; color: var(--light-brown); text-decoration: none; font-size: 0.62rem; font-weight: 700; flex: 1; min-width: 0; }
+        .nav-item i { display: block; font-size: 1.3rem; color: var(--dark-brown); margin-bottom: 5px; }
+        .nav-item.active { color: var(--dark-brown); }
+        .nav-item.active i { color: var(--primary-yellow); }
+    </style>
+</head>
+<body class="lang-id">
+
+<nav>
+    <a href="index.html" class="logo">
+        <img src="https://i.ibb.co.com/RT54HDDv/1000147993.png" alt="Logo">
+        <span>Scooter <b>Rentals</b></span>
+    </a>
+    <button class="lang-btn" onclick="toggleLang()">ID | EN</button>
+</nav>
+
+<header class="hero-mini">
+    <div class="container">
+        <h1 class="id">Katalog Armada</h1>
+        <h1 class="en">Fleet Collection</h1>
+        <p class="id">Pilihan unit terbaik dari 493 Scooter Rentals.</p>
+        <p class="en">The best units from 493 Scooter Rentals.</p>
+    </div>
+</header>
+
+<div class="container my-5" id="catalog">
+    <div id="loading" class="text-center py-5">
+        <div class="spinner-grow" style="color: var(--primary-yellow);"></div>
+        <p class="mt-3 fw-bold text-muted id">Menghubungkan ke Sistem...</p>
+        <p class="mt-3 fw-bold text-muted en">Connecting to system...</p>
+    </div>
+    <div class="row g-4" id="catalogContainer"></div>
+</div>
+
+<footer>
+    <p>© 2026 493 Scooter Rentals | <span class="id">Didukung oleh</span><span class="en">Powered by</span> MRD Digital Solution</p>
+    <p class="address">Jl. Nakula Gg. Baik-Baik No.1, Seminyak, Kec. Kuta, Kabupaten Badung, Bali 80361</p>
+</footer>
+
+<div class="floating-nav">
+    <a href="index.html" class="nav-item">
+        <i class="fas fa-home"></i> <span>Home</span>
+    </a>
+    <a href="index.html#layanan" class="nav-item">
+        <i class="fas fa-hand-holding-heart"></i> <span class="id">Layanan</span><span class="en">Services</span>
+    </a>
+    <a href="showunit.html" class="nav-item active">
+        <i class="fas fa-list-ul"></i> <span class="id">Armada</span><span class="en">Fleet</span>
+    </a>
+    <a href="cariunit.html" class="nav-item">
+        <i class="fas fa-calendar-check"></i> <span class="id">Cari Unit</span><span class="en">Check</span>
+    </a>
+    <a href="https://wa.me/62885739403193" target="_blank" class="nav-item">
+        <i class="fab fa-whatsapp"></i> <span>WhatsApp</span>
+    </a>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    const API_URL = "https://script.google.com/macros/s/AKfycby-xoi9mMwmXGwy6BRrIFfJxUisjaj_n3u-G5lc6mb9tj3GMXvDs4j1GGxTh4U6sW6v/exec";
+    const adminWA = "62885739403193";
+    const namaKlien = "493 Scooter Rentals";
+
+    function toggleLang() {
+        document.body.classList.toggle('lang-en');
+        document.body.classList.toggle('lang-id');
+    }
+
+    function getAutoImage(type) {
+            const t = type.toLowerCase();
+            if (t.includes("nmax")) return "https://i.ibb.co.com/1JzVD8KB/NMAX-NEO-S-BLACK.png";
+            if (t.includes("adv")) return "https://i.ibb.co.com/NnnJcZQb/NA0-RD.png";
+            if (t.includes("gear")) return "https://i.ibb.co.com/9z7XfJ2/Gear-std-1.png";
+            if (t.includes("fino")) return "https://i.ibb.co.com/kgX8zy6h/FINO-SPORTY-125-Retro-grey.png";
+            if (t.includes("genio")) return "https://i.ibb.co.com/WvQtQvJz/honda-genio-2023-dengan-pilihan-warna-baru-foto-ahm-sbvwf-r2ti.jpg";
+            if (t.includes("lexi")) return "https://i.ibb.co.com/d0Wk82d1/LX-hitam-metalic.png";
+            if (t.includes("mio")) return "https://i.ibb.co.com/21JHvLFV/Mio-m3-3.png";
+            if (t.includes("niu")) return "https://i.ibb.co.com/C3jxDp9T/niu-niu-full01.jpg";
+            if (t.includes("pcx")) return "https://i.ibb.co.com/9HBNm68G/Honda-PCX-160-CBS-Royal-Matte-Blue-1.png";
+            if (t.includes("scoopy")) return "https://i.ibb.co.com/bSh7C3z/Screenshot-2025-06-23-152546.png";
+            if (t.includes("xmax")) return "https://i.ibb.co.com/1tjYJm6N/2015-yamaha-x-max-250-abs-eu-midnight-black-studio-001.jpg";
+            if (t.includes("vespa")) return "https://i.ibb.co.com/20w8Md7m/vespa-sprint-slant-front-view-full-image-819066.jpg";
+            if (t.includes("sprint")) return "https://i.ibb.co.com/1JzVD8KB/NMAX-NEO-S-BLACK.png"; 
+            if (t.includes("stylo")) return "https://i.ibb.co.com/8L8zfXhv/Stylo-160-ABS-Royal-Matte-W.png";
+            if (t.includes("vario")) return "https://i.ibb.co.com/Q7YKKPV9/1000010203.jpg";
+            if (t.includes("fazzio")) return "https://i.ibb.co.com/S7fzxrFW/yamaha-fazzio-color-127005.jpg";
+            if (t.includes("filano")) return "https://i.ibb.co.com/XrFM8sMP/filano-perak.png";
+            if (t.includes("spacy")) return "https://i.ibb.co.com/B5VnNpq7/4b330d335cb1496c9556338e5429bac5.jpg";
+            if (t.includes("beat")) return "https://i.ibb.co.com/6cG5CgTC/Honda-Beat-Sporty-Deluxe-Black-1.png";
+            return "https://placehold.co/600x400/3E2723/ffffff?text=Unit+Ready";
+        }
+
+    async function loadCatalog() {
+        try {
+            const res = await fetch(API_URL);
+            const data = await res.json();
+            renderCatalog(data.items);
+            document.getElementById('loading').style.display = 'none';
+        } catch (e) { 
+            console.error(e);
+            document.getElementById('loading').innerHTML = "<p class='text-danger fw-bold'>Gagal memuat database.</p>";
+        }
+    }
+
+    function renderCatalog(items) {
+        const container = document.getElementById('catalogContainer');
+        container.innerHTML = "";
+        let groups = {};
+
+        items.forEach(m => {
+            const type = m[1];
+            const brand = m[2];
+            const price = m[3];
+            const status = (m[5] || "Available").toLowerCase();
+
+            if (!groups[type]) {
+                groups[type] = { brand: brand, type: type, price: price, ready: 0, image: getAutoImage(type) };
+            }
+            if (status === "available" || status === "booked") groups[type].ready++;
+        });
+
+        for (const key in groups) {
+            const g = groups[key];
+            const isReady = g.ready > 0;
+            const statusTextID = isReady ? "READY HARI INI" : "IN RENT";
+            const statusTextEN = isReady ? "READY TODAY" : "IN RENT";
+            const statusClass = isReady ? "bg-available" : "bg-rented";
+
+            container.innerHTML += `
+                <div class="col-lg-4 col-md-6">
+                    <div class="card card-motor h-100">
+                        <div class="img-wrapper">
+                            <span class="status-pill ${statusClass}">
+                                <span class="id">${statusTextID}</span>
+                                <span class="en">${statusTextEN}</span>
+                            </span>
+                            <img src="${g.image}" alt="${g.type}">
+                        </div>
+                        <div class="card-body p-4 text-center">
+                            <small class="fw-bold text-uppercase" style="color: var(--light-brown)">${g.brand}</small>
+                            <h4 class="fw-bold text-dark mb-1">${g.type}</h4>
+                            <p class="fw-bold mb-3" style="color: #198754">Rp ${Number(g.price).toLocaleString('id-ID')} <small class="text-muted">/day</small></p>
+                            
+                            <div class="d-grid gap-2">
+                                <a href="https://wa.me/${adminWA}?text=Halo ${namaKlien}, apakah unit ${g.brand} ${g.type} masih ada yang ready?" 
+                                   target="_blank" 
+                                   class="btn btn-booking py-2 fw-bold rounded-pill">
+                                   <span class="id">${isReady ? 'Booking Sekarang' : 'Tanya Jadwal'}</span>
+                                   <span class="en">${isReady ? 'Book Now' : 'Check Schedule'}</span>
+                                </a>
+                            </div>
+                            ${isReady ? `<small class="mt-2 d-block fw-bold" style="color: var(--dark-brown)">${g.ready} unit standby</small>` : ''}
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+    }
+    loadCatalog();
+</script>
+</body>
+</html>

@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=[ID_GOOGLE_ADS]"></script> 
+    <script> 
+      window.dataLayer = window.dataLayer || []; 
+      function gtag(){dataLayer.push(arguments);} 
+      gtag('js', new Date()); 
+      gtag('config', '[ID_GOOGLE_ADS]'); 
+    </script>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    <title>Sewa Motor Bali Murah & Terpercaya | 493 Scooter Rentals</title>
+    <link rel="icon" type="image/png" href="https://i.ibb.co.com/RT54HDDv/1000147993.png">
+    
+    <meta name="theme-color" content="#3E2723">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary-yellow: #FFD700;
+            --dark-brown: #3E2723;
+            --light-brown: #5D4037;
+            --text-dark: #2C1B18;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body { 
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; 
+            background-color: #fdfaf5; 
+            color: var(--text-dark); 
+            line-height: 1.6; 
+            overflow-x: hidden; 
+            -webkit-tap-highlight-color: transparent; 
+        }
+
+        /* MULTI-LANGUAGE */
+        body.lang-id .en { display: none !important; }
+        body.lang-en .id { display: none !important; }
+
+        /* NAVBAR TOP */
+        nav { background: #fff; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; }
+        .logo { font-weight: 800; font-size: 1.1rem; color: var(--dark-brown); letter-spacing: 0.5px; display: flex; align-items: center; gap: 8px; }
+        .logo img { height: 38px; }
+        .logo span { color: var(--dark-brown); }
+        .logo b { color: var(--primary-yellow); }
+        
+        .lang-btn { background: #fff; color: var(--dark-brown); border: 1px solid var(--primary-yellow); padding: 6px 12px; border-radius: 20px; font-size: 0.7rem; font-weight: 700; cursor: pointer; }
+
+        /* HERO */
+        .hero { 
+            height: 55vh; 
+            background: linear-gradient(rgba(62, 39, 35, 0.6), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1558981806-ec527fa84c39?q=80&w=1000&auto=format&fit=crop'); 
+            background-size: cover; 
+            background-position: center; 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: center; 
+            align-items: center; 
+            color: #fff; 
+            text-align: center; 
+            padding: 20px; 
+        }
+        .hero h2 { font-size: 2.3rem; font-weight: 800; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
+        .hero p { font-size: 1rem; color: var(--primary-yellow); font-weight: 500; margin-top: 5px; }
+
+        .container { padding: 40px 15px; max-width: 1000px; margin: auto; }
+        .section-title { text-align: center; margin-bottom: 30px; }
+        .section-title h3 { font-size: 1.7rem; font-weight: 800; color: var(--dark-brown); }
+        .underline { width: 60px; height: 5px; background: var(--primary-yellow); margin: 10px auto; border-radius: 2px; }
+
+        /* FLEET GRID (DYNAMIC) */
+        .fleet-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+        .fleet-card { background: #fff; border-radius: 30px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.08); position: relative; border: 1px solid #eee; transition: 0.3s; }
+        .fleet-card:hover { transform: translateY(-5px); border-color: var(--primary-yellow); }
+        
+        .img-wrapper { position: relative; height: 320px; overflow: hidden; background: #f0f0f0; }
+        .img-wrapper img { width: 100%; height: 100%; object-fit: cover; }
+
+        .unit-info-overlay { 
+            position: absolute; bottom: 0; left: 0; width: 100%; 
+            background: linear-gradient(transparent, rgba(62, 39, 35, 0.95)); 
+            color: white; padding: 40px 20px 20px; text-align: left;
+        }
+        .unit-brand { color: var(--primary-yellow); font-size: 0.75rem; text-transform: uppercase; font-weight: 800; margin-bottom: 5px; display: block; }
+        .unit-name { font-size: 1.25rem; font-weight: 800; margin-bottom: 2px; display: block; }
+        .unit-price { font-size: 0.9rem; font-weight: 600; color: #fff; opacity: 0.9; margin-bottom: 12px; display: block; }
+        
+        .btn-booking-slide { background: var(--primary-yellow); color: var(--dark-brown); padding: 8px 20px; border-radius: 12px; text-decoration: none; font-weight: 800; font-size: 0.8rem; display: inline-block; transition: 0.3s; }
+
+        /* LAYANAN */
+        .layanan-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 20px; }
+        .layanan-card { background: #fff; padding: 35px 20px; border-radius: 25px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border: 1px solid #f1f1f1; }
+        .layanan-card i { font-size: 2.5rem; color: var(--dark-brown); margin-bottom: 15px; }
+
+        /* MAPS */
+        .map-wrapper { width: 100%; height: 350px; border-radius: 30px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.08); border: 1px solid #eee; margin-top: 20px; }
+        .map-wrapper iframe { width: 100%; height: 100%; border: 0; }
+
+        /* FLOATING NAV MOBILE */
+        .floating-nav { 
+            position: fixed; bottom: 0; left: 0; width: 100%; 
+            background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); 
+            display: flex; justify-content: space-around; 
+            padding: 12px 5px calc(15px + env(safe-area-inset-bottom)); 
+            box-shadow: 0 -5px 25px rgba(0,0,0,0.1); z-index: 9999; 
+            border-radius: 25px 25px 0 0; 
+        }
+        .nav-item { text-align: center; color: var(--light-brown); text-decoration: none; font-size: 0.62rem; font-weight: 700; flex: 1; min-width: 0; }
+        .nav-item i { display: block; font-size: 1.3rem; color: var(--dark-brown); margin-bottom: 5px; }
+
+        footer { text-align: center; padding: 40px 20px 140px; color: #666; font-size: 0.8rem; background: var(--dark-brown); color: #ccc; }
+        footer .address { color: var(--primary-yellow); font-style: italic; font-size: 0.75rem; margin-top: 10px; }
+
+        #armada, #layanan, #lokasi { scroll-margin-top: 100px; }
+
+        /* LOADING SPINNER */
+        #loadingFleet { text-align: center; padding: 40px; width: 100%; }
+        .spinner { width: 40px; height: 40px; border: 4px solid #f3f3f3; border-top: 4px solid var(--primary-yellow); border-radius: 50%; animation: spin 1s linear infinite; margin: 0 auto 10px; }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+    </style>
+</head>
+<body class="lang-id">
+
+    <nav>
+        <div class="logo">
+            <img src="https://i.ibb.co.com/RT54HDDv/1000147993.png" alt="Logo">
+            <span>Scooter <b>Rentals</b></span>
+        </div>
+        <button class="lang-btn" onclick="toggleLang()">ID | EN</button>
+    </nav>
+
+    <section class="hero" id="home">
+        <div data-aos="zoom-in">
+            <h2>493 Scooter Rentals</h2>
+            <p class="id">Eksplorasi Bali Lebih Mudah & Seru</p>
+            <p class="en">Explore Bali Easier & More Fun</p>
+        </div>
+    </section>
+
+    <div class="container">
+        
+        <div id="armada" class="section-title" data-aos="fade-up">
+            <h3 class="id">Pilihan Armada Terbaik</h3>
+            <h3 class="en">Our Best Fleet</h3>
+            <div class="underline"></div>
+        </div>
+
+        <div id="fleetContainer" class="fleet-grid">
+            <div id="loadingFleet">
+                <div class="spinner"></div>
+                <p class="id">Memuat armada...</p>
+                <p class="en">Loading fleet...</p>
+            </div>
+        </div>
+
+        <div id="layanan" class="section-title" data-aos="fade-up" style="margin-top: 60px;">
+            <h3 class="id">Layanan Unggulan</h3>
+            <h3 class="en">Our Services</h3>
+            <div class="underline"></div>
+        </div>
+
+        <div class="layanan-grid">
+            <div class="layanan-card" data-aos="zoom-in">
+                <i class="fas fa-shield-alt"></i>
+                <h4 class="id">Kondisi Prima</h4><h4 class="en">Prime Condition</h4>
+                <p class="small text-muted id">Unit selalu diservis berkala.</p>
+                <p class="small text-muted en">Units are regularly serviced.</p>
+            </div>
+            <div class="layanan-card" data-aos="zoom-in" data-aos-delay="100">
+                <i class="fas fa-motorcycle"></i>
+                <h4 class="id">Sewa Motor</h4><h4 class="en">Bike Rental</h4>
+                <p class="small text-muted id">Berbagai pilihan motor matic.</p>
+                <p class="small text-muted en">Various types of automatic bikes.</p>
+            </div>
+        </div>
+
+        <div id="lokasi" class="section-title" data-aos="fade-up" style="margin-top: 60px;">
+            <h3 class="id">Lokasi Kami</h3>
+            <h3 class="en">Our Location</h3>
+            <div class="underline"></div>
+        </div>
+
+        <div class="map-wrapper" data-aos="zoom-in">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3944.116773539194!2d115.1666667!3d-8.6805556!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd246d656846175%3A0x633900139b4f0f0c!2sJl.%20Nakula%20Gg.%20Baik-Baik%20No.1%2C%20Seminyak%2C%20Kec.%20Kuta%2C%20Kabupaten%20Badung%2C%20Bali%2080361!5e0!3m2!1sid!2sid!4v1715180000000!5m2!1sid!2sid" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>© 2026 493 Scooter Rentals | <span class="id">Didukung oleh</span><span class="en">Powered by</span> MRD Digital Solution</p>
+        <p class="address">Jl. Nakula Gg. Baik-Baik No.1, Seminyak, Kec. Kuta, Kabupaten Badung, Bali 80361</p>
+    </footer>
+
+    <div class="floating-nav">
+        <a onclick="slowScroll('#home')" class="nav-item">
+            <i class="fas fa-home"></i> <span>Home</span>
+        </a>
+        <a onclick="slowScroll('#layanan')" class="nav-item">
+            <i class="fas fa-hand-holding-heart"></i> <span class="id">Layanan</span><span class="en">Services</span>
+        </a>
+        <a href="showunit.html" class="nav-item">
+            <i class="fas fa-list-ul"></i> <span class="id">Armada</span><span class="en">Fleet</span>
+        </a>
+        <a href="cariunit.html" class="nav-item">
+            <i class="fas fa-calendar-check"></i> <span class="id">Cek Unit</span><span class="en">Check</span>
+        </a>
+        <a href="https://wa.me/62885739403193" target="_blank" class="nav-item">
+            <i class="fab fa-whatsapp"></i> <span>WhatsApp</span>
+        </a>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true });
+
+        const API_URL = "https://script.google.com/macros/s/AKfycby-xoi9mMwmXGwy6BRrIFfJxUisjaj_n3u-G5lc6mb9tj3GMXvDs4j1GGxTh4U6sW6v/exec";
+        const adminWA = "62885739403193";
+        const namaKlien = "493 Scooter Rentals";
+
+        function toggleLang() {
+            document.body.classList.toggle('lang-en');
+            document.body.classList.toggle('lang-id');
+        }
+
+        function slowScroll(target) {
+            const el = document.querySelector(target);
+            if(el) window.scrollTo({ top: el.offsetTop - 90, behavior: 'smooth' });
+        }
+
+        // AUTO IMAGE FUNCTION
+        function getAutoImage(type) {
+            const t = type.toLowerCase();
+            if (t.includes("nmax")) return "https://i.ibb.co.com/1JzVD8KB/NMAX-NEO-S-BLACK.png";
+            if (t.includes("adv")) return "https://i.ibb.co.com/NnnJcZQb/NA0-RD.png";
+            if (t.includes("gear")) return "https://i.ibb.co.com/9z7XfJ2/Gear-std-1.png";
+            if (t.includes("fino")) return "https://i.ibb.co.com/kgX8zy6h/FINO-SPORTY-125-Retro-grey.png";
+            if (t.includes("genio")) return "https://i.ibb.co.com/WvQtQvJz/honda-genio-2023-dengan-pilihan-warna-baru-foto-ahm-sbvwf-r2ti.jpg";
+            if (t.includes("lexi")) return "https://i.ibb.co.com/d0Wk82d1/LX-hitam-metalic.png";
+            if (t.includes("mio")) return "https://i.ibb.co.com/21JHvLFV/Mio-m3-3.png";
+            if (t.includes("niu")) return "https://i.ibb.co.com/C3jxDp9T/niu-niu-full01.jpg";
+            if (t.includes("pcx")) return "https://i.ibb.co.com/9HBNm68G/Honda-PCX-160-CBS-Royal-Matte-Blue-1.png";
+            if (t.includes("scoopy")) return "https://i.ibb.co.com/bSh7C3z/Screenshot-2025-06-23-152546.png";
+            if (t.includes("xmax")) return "https://i.ibb.co.com/1tjYJm6N/2015-yamaha-x-max-250-abs-eu-midnight-black-studio-001.jpg";
+            if (t.includes("vespa")) return "https://i.ibb.co.com/20w8Md7m/vespa-sprint-slant-front-view-full-image-819066.jpg";
+            if (t.includes("sprint")) return "https://i.ibb.co.com/1JzVD8KB/NMAX-NEO-S-BLACK.png"; 
+            if (t.includes("stylo")) return "https://i.ibb.co.com/8L8zfXhv/Stylo-160-ABS-Royal-Matte-W.png";
+            if (t.includes("vario")) return "https://i.ibb.co.com/Q7YKKPV9/1000010203.jpg";
+            if (t.includes("fazzio")) return "https://i.ibb.co.com/S7fzxrFW/yamaha-fazzio-color-127005.jpg";
+            if (t.includes("filano")) return "https://i.ibb.co.com/XrFM8sMP/filano-perak.png";
+            if (t.includes("spacy")) return "https://i.ibb.co.com/B5VnNpq7/4b330d335cb1496c9556338e5429bac5.jpg";
+            if (t.includes("beat")) return "https://i.ibb.co.com/6cG5CgTC/Honda-Beat-Sporty-Deluxe-Black-1.png";
+            return "https://placehold.co/600x400/3E2723/ffffff?text=Unit+Ready";
+        }
+
+        // LOAD DATA & GROUP BY TYPE
+        async function loadFleet() {
+            try {
+                const res = await fetch(API_URL);
+                const data = await res.json();
+                renderFleet(data.items);
+            } catch (e) {
+                console.error(e);
+                document.getElementById('loadingFleet').innerHTML = "<p class='text-danger'>Gagal memuat data armada.</p>";
+            }
+        }
+
+        function renderFleet(items) {
+            const container = document.getElementById('fleetContainer');
+            container.innerHTML = "";
+            let groups = {};
+
+            // Mengelompokkan berdasarkan tipe motor
+            items.forEach(m => {
+                const type = m[1];
+                const brand = m[2];
+                const price = m[3];
+                const status = (m[5] || "Available").toLowerCase();
+
+                // Kita abaikan unit yang rusak/bengkel secara logis, tapi tetap tampilkan tipe motornya
+                if (status === "bengkel") return;
+
+                if (!groups[type]) {
+                    groups[type] = { brand: brand, type: type, price: price, image: getAutoImage(type) };
+                }
+            });
+
+            for (const key in groups) {
+                const g = groups[key];
+                container.innerHTML += `
+                    <div class="fleet-card" data-aos="fade-up">
+                        <div class="img-wrapper">
+                            <img src="${g.image}" alt="${g.type}">
+                            <div class="unit-info-overlay">
+                                <span class="unit-brand">${g.brand}</span>
+                                <span class="unit-name">${g.type}</span>
+                                <span class="unit-price">Rp ${Number(g.price).toLocaleString('id-ID')} / day</span>
+                                <a href="https://wa.me/${adminWA}?text=Halo ${namaKlien}, saya mau sewa ${g.brand} ${g.type}" class="btn-booking-slide">
+                                    <span class="id">Sewa Sekarang</span><span class="en">Rent Now</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }
+        }
+
+        loadFleet();
+    </script>
+</body>
+</html>
