@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <script async src="https://www.googletagmanager.com/gtag/js?id=[ID_GOOGLE_ADS]"></script> 
     <script> 
@@ -12,15 +12,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
-    <title>Sewa Motor Bali Murah & Terpercaya | 493 Scooter Rentals</title>
+    <title>Premium Scooter Rental in Bali | 493 Scooter Rentals</title>
+    <meta name="description" content="Explore Bali the easy and fun way! Rent top-condition, premium automatic scooters at the best prices in Seminyak and Kuta, Bali.">
     <link rel="icon" type="image/png" href="https://i.ibb.co.com/RT54HDDv/1000147993.png">
     
     <meta name="theme-color" content="#3E2723">
 
-    <meta property="og:title" content="493 Scooter Rentals | Sewa Motor Bali">
-    <meta property="og:description" content="Eksplorasi Bali Lebih Mudah & Seru. Sewa motor matic kondisi prima dengan harga terjangkau di Seminyak, Kuta, Bali.">
+    <meta property="og:title" content="493 Scooter Rentals | Premium Scooter Rental in Bali">
+    <meta property="og:description" content="Explore Bali the easy and fun way! Rent top-condition, premium automatic scooters at the best prices in Seminyak and Kuta. Book your ride today!">
     <meta property="og:image" content="https://images.unsplash.com/photo-1558981806-ec527fa84c39?q=80&w=1000&auto=format&fit=crop">
-    <meta property="og:url" content="https://493scooterrentals.com"> <meta property="og:type" content="website">
+    <meta property="og:url" content="https://493scooterrentals.com"> 
+    <meta property="og:type" content="website">
+    
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -55,7 +58,24 @@
         .logo span { color: var(--dark-brown); }
         .logo b { color: var(--primary-yellow); }
         
-        .lang-btn { background: #fff; color: var(--dark-brown); border: 1px solid var(--primary-yellow); padding: 6px 12px; border-radius: 20px; font-size: 0.7rem; font-weight: 700; cursor: pointer; }
+        /* UPDATED LANG BUTTON */
+        .lang-btn { 
+            background: var(--dark-brown); 
+            color: var(--primary-yellow); 
+            border: 2px solid var(--primary-yellow); 
+            padding: 6px 14px; 
+            border-radius: 20px; 
+            font-size: 0.75rem; 
+            font-weight: 800; 
+            cursor: pointer; 
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        .lang-btn:hover {
+            background: var(--primary-yellow);
+            color: var(--dark-brown);
+            border-color: var(--dark-brown);
+        }
 
         /* HERO */
         .hero { 
@@ -130,14 +150,14 @@
         @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
     </style>
 </head>
-<body class="lang-id">
+<body class="lang-en">
 
     <nav>
         <div class="logo">
             <img src="https://i.ibb.co.com/RT54HDDv/1000147993.png" alt="Logo">
             <span>Scooter <b>Rentals</b></span>
         </div>
-        <button class="lang-btn" onclick="toggleLang()">ID | EN</button>
+        <button class="lang-btn" onclick="toggleLang()">EN | ID</button>
     </nav>
 
     <section class="hero" id="home">
@@ -231,6 +251,14 @@
         function toggleLang() {
             document.body.classList.toggle('lang-en');
             document.body.classList.toggle('lang-id');
+            
+            // Opsional: Ubah teks tombol jika ingin lebih interaktif
+            const btn = document.querySelector('.lang-btn');
+            if(document.body.classList.contains('lang-en')) {
+                btn.innerHTML = "EN | ID";
+            } else {
+                btn.innerHTML = "ID | EN";
+            }
         }
 
         function slowScroll(target) {
@@ -271,7 +299,7 @@
                 renderFleet(data.items);
             } catch (e) {
                 console.error(e);
-                document.getElementById('loadingFleet').innerHTML = "<p class='text-danger'>Gagal memuat data armada.</p>";
+                document.getElementById('loadingFleet').innerHTML = "<p class='text-danger id'>Gagal memuat data armada.</p><p class='text-danger en'>Failed to load fleet data.</p>";
             }
         }
 
@@ -280,14 +308,12 @@
             container.innerHTML = "";
             let groups = {};
 
-            // Mengelompokkan berdasarkan tipe motor
             items.forEach(m => {
                 const type = m[1];
                 const brand = m[2];
                 const price = m[3];
                 const status = (m[5] || "Available").toLowerCase();
 
-                // Kita abaikan unit yang rusak/bengkel secara logis, tapi tetap tampilkan tipe motornya
                 if (status === "bengkel") return;
 
                 if (!groups[type]) {
@@ -305,8 +331,8 @@
                                 <span class="unit-brand">${g.brand}</span>
                                 <span class="unit-name">${g.type}</span>
                                 <span class="unit-price">Rp ${Number(g.price).toLocaleString('id-ID')} / day</span>
-                                <a href="https://wa.me/${adminWA}?text=Halo ${namaKlien}, saya mau sewa ${g.brand} ${g.type}" class="btn-booking-slide">
-                                    <span class="id">Sewa Sekarang</span><span class="en">Rent Now</span>
+                                <a href="https://wa.me/${adminWA}?text=Hello ${namaKlien}, I want to rent ${g.brand} ${g.type}" class="btn-booking-slide">
+                                    <span class="id" style="display:none;">Sewa Sekarang</span><span class="en">Rent Now</span>
                                 </a>
                             </div>
                         </div>
