@@ -113,7 +113,7 @@
     <div class="search-box mb-5">
         <div class="row g-3">
             <div class="col-md-5">
-                <label class="form-label id">Tanggal Ambil</label>
+                <label class="form-label id">Tanggal Sewa</label>
                 <label class="form-label en">Pick-up Date</label>
                 <input type="date" id="start" class="form-control form-control-lg">
             </div>
@@ -277,7 +277,7 @@
                     <div class="card card-motor h-100">
                         <div class="img-wrapper">
                             <span class="status-pill">${g.count} Ready</span>
-                            <img src="${g.image}" alt="${g.type}">
+                            <img src="${g.image}" alt="${g.type}" loading="lazy">
                         </div>
                         <div class="card-body p-4 text-center">
                             <small class="fw-bold text-uppercase" style="color: var(--light-brown)">${g.brand}</small>
