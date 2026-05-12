@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 
 # Arahkan Google ke sitemap kakak
-Sitemap: https://493sewamotordibali.com/sitemap.xml
+Sitemap: https://www.493sewamotordibali.com/sitemap.xml
